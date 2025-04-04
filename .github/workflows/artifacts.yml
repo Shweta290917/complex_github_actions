@@ -9,7 +9,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out the name
+    - name: Check out the code
       uses: actions/checkout@v2
     - name: Upload the artifact
       uses: actions/upload-artifacts@v2
