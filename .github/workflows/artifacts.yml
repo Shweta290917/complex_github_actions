@@ -1,0 +1,24 @@
+name: Artifacts
+
+on: [push]
+
+env: 
+  ARTIFACT_NAME: myartifact
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v3
+
+    - name: Create sample artifact file (if needed)
+      run: echo "This is a test artifact" > artifact.txt
+
+    - name: Upload the artifact
+      uses: actions/upload-artifact@v3  # Use latest version
+      with:
+        name: ${{ env.ARTIFACT_NAME }}
+        path: artifact.txt  # Upload only necessary files
+
+
